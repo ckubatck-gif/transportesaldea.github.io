@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<title>Solicitar presupuesto</title>
+<meta name="description" content="Pide presupuesto para una mudanza, transporte o reparto. Te llamamos en nuestro horario de atención.">
+<meta name="theme-color" content="#14213d">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .pub{max-width:640px;margin:0 auto;padding:20px 16px 60px}
+  .pub header{display:flex;align-items:center;gap:12px;margin:8px 0 14px}
+  .pub header .ico{width:34px;height:34px;color:var(--accent)}
+  .pub .info{font-size:.82rem;color:var(--mut);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:0 0 12px;background:var(--surface2)}
+  .pub .info dl{margin:6px 0 0;display:grid;grid-template-columns:auto 1fr;gap:2px 10px}
+  .pub .info dt{font-weight:700}.pub .info dd{margin:0}
+  .pend{background:var(--warn-soft);color:var(--warn);padding:0 4px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="pub" role="main">
+  <header><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><div><h1 id="emp">Solicitar presupuesto</h1><div class="sub">Mudanzas, transportes y repartos</div></div></header>
+  <div id="estado" class="estado" role="status"></div>
+  <p id="tel" class="sub" hidden></p>
+  <form id="f" class="card" style="margin-top:12px" novalidate>
+    <p class="sub" style="margin-top:0">Cuéntanos qué necesitas y te llamamos. Los campos con * son obligatorios.</p>
+    <label class="field"><span>Nombre *</span><input name="nombre" required maxlength="80" autocomplete="name"></label>
+    <div class="cols2">
+      <label class="field"><span>Teléfono *</span><input name="telefono" type="tel" inputmode="tel" required maxlength="20" autocomplete="tel"></label>
+      <label class="field"><span>Email</span><input name="email" type="email" maxlength="120" autocomplete="email"></label>
+    </div>
+    <label class="field"><span>Servicio *</span><select name="servicio" id="servicio" required></select></label>
+    <div class="cols2">
+      <label class="field"><span>Origen</span><input name="origen" maxlength="160" placeholder="Calle y localidad"></label>
+      <label class="field"><span>Destino</span><input name="destino" maxlength="160" placeholder="Calle y localidad"></label>
+    </div>
+    <div class="cols2">
+      <label class="field"><span>Fecha deseada</span><input name="fecha" type="date" id="fecha"></label>
+      <label class="field"><span>¿Cuándo prefieres que te llamemos?</span><select name="franja"><option>Lo antes posible</option><option>Por la mañana</option><option>Por la tarde</option></select></label>
+    </div>
+    <label class="field"><span>Detalles</span><textarea name="detalles" maxlength="1200" placeholder="Tamaño de la vivienda, plantas, ascensor, objetos voluminosos…"></textarea></label>
+    <div class="hp" aria-hidden="true"><label>No rellenar<input name="alt" tabindex="-1" autocomplete="off"></label></div>
+    <div class="info" id="rgpd"></div>
+    <label class="check"><input type="checkbox" name="consentimiento" required><span>He leído la información sobre protección de datos y acepto que usen estos datos para contactarme sobre mi solicitud.</span></label>
+    <div class="alert err" id="err" hidden role="alert"></div>
+    <button class="btn primary" type="submit" id="enviar" style="width:100%">Enviar solicitud</button>
+  </form>
+  <section id="ok" class="card" hidden role="status" tabindex="-1"><h2>Solicitud enviada</h2><p id="ok-txt"></p></section>
+</div>
+<script src="config.js"></script>
+<script src="solicitar.js"></script>
+</body>
+</html>

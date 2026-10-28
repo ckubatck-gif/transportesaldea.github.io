@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<title>Gestión de mudanzas</title>
+<meta name="description" content="Clientes, presupuestos, citas, agenda y recordatorios para empresas de mudanzas, transportes y repartos.">
+<meta name="theme-color" content="#14213d">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mudanzas">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <aside class="side" id="side" aria-label="Navegación principal"></aside>
+  <main id="main" tabindex="-1" aria-live="polite"></main>
+  <nav class="tabs" id="tabs" aria-label="Navegación principal"></nav>
+</div>
+<div id="toasts" aria-live="polite"></div>
+<dialog id="dlg" aria-modal="true"></dialog>
+<noscript><p style="padding:20px">Esta aplicación necesita JavaScript.</p></noscript>
+<script src="config.js"></script>
+<script src="core.js"></script>
+<script src="views.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

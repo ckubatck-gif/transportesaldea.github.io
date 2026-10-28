@@ -1,0 +1,10 @@
+{
+  "name": "mudanzas-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gestión de mudanzas, transportes y repartos (PWA) con buzón de solicitudes fuera de horario",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@vercel/blob": "^1.0.0"
+  }
+}
